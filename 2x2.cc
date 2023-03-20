@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-struct TVec3
+struct TRes2x2
 {
   float x,y;
   int code;
@@ -18,8 +18,8 @@ void Scale(TEq2x2 *eq,float scale){
   eq->it *= scale;
 } 
 
-TVec3 Resolve2x2(TEq2x2 *eq1, TEq2x2 *eq2, bool debug=false){
-  TVec3 res;
+TRes2x2 Resolve2x2(TEq2x2 *eq1, TEq2x2 *eq2, bool debug=false){
+  TRes2x2 res;
   float temp_x1=eq1->x,temp_x2=eq2->x,
         temp_y1=eq1->y,temp_y2=eq2->y;
   if(eq1->x != 0 && eq1->y == 0 && eq2->x == 0 && eq2->y != 0){
